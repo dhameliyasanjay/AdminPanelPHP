@@ -1,5 +1,5 @@
 <head>
-    <?php session_start(); ?>
+  
     <meta charset="utf-8" />
     <title>Metronic Admin Theme #1 | Color Library</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
