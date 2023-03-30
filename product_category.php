@@ -1,18 +1,18 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['id'])) {
-//     header("Location: index.php");
-// }
-
 include 'config.php';
+
+if (!isset($_SESSION['id'])) {
+     header("Location: index.php");
+ }
+
 
 if (isset($_POST['submit'])) {
 
     $name = $_POST['name'];
     $is_active = $_POST['is_active'];
 
-    $sql = "INSERT INTO product_category(name,is_active,is_deleted) 
-		VALUES ('{$name}','{$is_active}','{$is_deleted}')";
+    $sql = "INSERT INTO product_category(name,is_active) 
+		VALUES ('{$name}','{$is_active}')";
 
     if (mysqli_query($conn, $sql)) {
         $_SESSION['message'] = "Successfully Registration!";

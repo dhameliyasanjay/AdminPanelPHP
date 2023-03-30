@@ -35,10 +35,28 @@ var Login = function() {
     var product_category = function() {
         $("#product_category").validate({
             rules: {
-                product_category: "required",
+                name: "required",
+                is_active: "required",
             },
             messages: {
-                product_category: "Please your product category name",
+                name: "Please your product category name",
+                is_active: "Please selected",
+            }
+        });
+    }
+
+    var unit = function() {
+        $("#unit").validate({
+            rules: {
+                unit: "required",
+                is_active: "required",
+                is_de: "required",
+
+            },
+            messages: {
+                unit: "Please specify unit name ",
+                is_active: "Please selected",
+                is_de: "Please selected",
             }
         });
     }
@@ -52,6 +70,9 @@ var Login = function() {
         },
         product_category: function() {
             product_category();
-        }
+        },
+        unit: function() {
+            unit();
+        },
     }
 }();

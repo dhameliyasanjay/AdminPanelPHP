@@ -1,12 +1,10 @@
 <?php
-// session_start();
-// if (!isset($_SESSION['id'])) {
-//     header("Location: index.php");
-// }
-
 include 'config.php';
-
 include 'common.php';
+
+ if (!isset($_SESSION['id'])) {
+     header("Location: index.php");
+ }
 ?>
 <!DOCTYPE html>
 <html lang="en">

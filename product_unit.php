@@ -1,48 +1,29 @@
 <?php
-
 include 'config.php';
 
- if (!isset($_SESSION['id'])) {
-     header("Location: index.php");
- }
-
+//if (!isset($_SESSION['id'])) {
+//    header("Location: index.php");
+//}
 
 if (isset($_POST['submit'])) {
 
-    $name = $_POST['name'];
-
-    $id = $_POST['id'];
-
+    $unit = $_POST['unit'];
     $is_active = $_POST['is_active'];
+    $is_deleted = $_POST['is_deleted'];
 
-    $sql = "UPDATE product_category SET name = '{$name}', is_active = '{$is_active}' WHERE id = '{$id}'";
+    $sql = "INSERT INTO product_unit (unit,is_active,is_deleted)
+		VALUES ('{$unit}','{$is_active}','{$is_deleted}')";
 
     if (mysqli_query($conn, $sql)) {
-
-        $_SESSION['message'] = "Record updated successfully.";
-        header('location:product_category_index.php');
-
+        $_SESSION['message'] = "Successfully!";
+        header('location:product_unit_index.php');
     } else {
-
-        echo "Error:" . $sql . "<br>" . $conn->error;
-
+        $_SESSION['message'] = "Error!";
     }
-
+    mysqli_close($conn);
 }
 
-if (isset($_GET['id'])) {
 
-    $id = $_GET['id'];
-
-    $sql = "SELECT * FROM product_category WHERE id = '{$id}'";
-
-    $result = $conn->query($sql);
-    $row = $result->fetch_assoc();
-
-// if ($result->num_rows > 0) {
-
-// while ($row = $result->fetch_assoc()) {
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +57,7 @@ if (isset($_GET['id'])) {
                             <i class="fa fa-circle"></i>
                         </li>
                         <li>
-                            <span>Product Category</span>
+                            <span>Product Unit</span>
                         </li>
                     </ul>
                 </div>
@@ -85,60 +66,66 @@ if (isset($_GET['id'])) {
                     <div class="portlet box green">
                         <div class="portlet-title">
                             <div class="caption">
-                                <i class="fa fa-gift"></i>Product Category
+                                <i class="fa fa-gift"></i>Product Unit
                             </div>
 
                         </div>
                         <div class="portlet-body form">
                             <!-- BEGIN FORM-->
-                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="product_category"
-                                  method="post" class="form-horizontal">
+                            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="unit" method="post" class="form-horizontal">
                                 <div class="form-body">
-                                    <h3 class="form-section">Product Category</h3>
+                                    <h3 class="form-section">Product Unit</h3>
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label col-md-3">Product Category Name</label>
+                                                <label class="control-label col-md-3">Product Unit :</label>
                                                 <div class="col-md-9">
-                                                    <input type="hidden" class="form-control" name="id"
-                                                           value="<?php echo $row['id']; ?>"
-                                                           placeholder="Product Category Name">
-                                                    <input type="text" class="form-control" name="name"
-                                                           value="<?php echo $row['name']; ?>">
+                                                    <input type="text" class="form-control" name="unit" placeholder="Product Unit ">
                                                     <span class="help-block"> </span>
                                                 </div>
                                             </div>
                                         </div>
+                                    </div>
+                                    <div class="row">
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label class="control-label col-md-3">Product Category Name :</label>
+                                                <label class="control-label col-md-3">Product Unit :</label>
                                                 <div class="col-md-9 margin-top-10">
                                                     <label class="margin-right-10">
-                                                        <input type="radio" name="is_active"
-                                                               value="Y" <?php if ($row['is_active'] == "Y") {
-                                                            echo "checked";
-                                                        } ?>> Active
+                                                        <input type="radio" name="is_active" value="Y"> Active
                                                     </label>
                                                     <label>
-                                                        <input type="radio" name="is_active"
-                                                               value="N" <?php if ($row['is_active'] == "N") {
-                                                            echo "checked";
-                                                        } ?>> Deactivate
+                                                        <input type="radio" name="is_active" value="N"> Deactivate
                                                     </label>
                                                     <span class="help-block"> </span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-3">Product Unit Deleted :</label>
+                                                <div class="col-md-9 margin-top-10">
+                                                    <label class="margin-right-10">
+                                                        <input type="radio" name="is_deleted" value="Y"> Active
+                                                    </label>
+                                                    <label>
+                                                        <input type="radio" name="is_deleted" value="N"> Deactivate
+                                                    </label>
+                                                    <span class="help-block"> </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                 </div>
                                 <div class="form-actions">
                                     <div class="row">
                                         <div class="col-md-6">
                                             <div class="row">
                                                 <div class="col-md-offset-3 col-md-9">
-                                                    <button type="submit" name="submit" value="submit"
-                                                            class="btn green">Submit
-                                                    </button>
+                                                    <button type="submit" name="submit" value="submit" class="btn green">Submit</button>
                                                     <button type="button" class="btn default">Cancel</button>
                                                 </div>
                                             </div>
@@ -147,7 +134,6 @@ if (isset($_GET['id'])) {
                                     </div>
                                 </div>
                             </form>
-
                             <!-- END FORM-->
                         </div>
                     </div>
@@ -169,8 +155,10 @@ if (isset($_GET['id'])) {
 
 <script>
     jQuery(document).ready(function () {
-        Login.product_category()
+        Login.unit()
     });
 </script>
 </body>
+
 </html>
+
