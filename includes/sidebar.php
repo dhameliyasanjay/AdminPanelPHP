@@ -20,6 +20,10 @@
                                     <i class="icon-home"></i>
                                     <span class="title">Dashboard</span>
                                 </a>
+                                <a href="product_category_index.php" class="nav-link nav-toggle">
+                                    <!-- <i class="icon-home"></i> -->
+                                    <span class="title">Product category</span>
+                                </a>
                             </li>
                             
                         </ul>
