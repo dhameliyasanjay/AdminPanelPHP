@@ -3,9 +3,9 @@
 include "config.php";
 include "common.php";
 
-if (isset($_SESSION['id'])) {
-    header("Location: dashboard.php");
-}
+// if (isset($_SESSION['id'])) {
+//     header("Location: dashboard.php");
+// }
 
 if (isset($_POST['username']) && isset($_POST['password'])) {
 
