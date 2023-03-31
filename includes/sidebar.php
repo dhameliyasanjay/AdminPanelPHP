@@ -59,6 +59,13 @@
 <!--                                <span class="badge badge-success">1</span>-->
                             </a>
                         </li>
+                        <li class="nav-item start ">
+                            <a href="product_brand_index.php" class="nav-link ">
+                                <!--                                <i class="icon-bulb"></i>-->
+                                <span class="title">Product Brand</span>
+                                <!--                                <span class="badge badge-success">1</span>-->
+                            </a>
+                        </li>
 <!--                        <li class="nav-item start ">-->
 <!--                            <a href="dashboard_3.html" class="nav-link ">-->
 <!--                                <i class="icon-graph"></i>-->
