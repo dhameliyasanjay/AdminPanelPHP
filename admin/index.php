@@ -13,10 +13,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $password = validate($_POST['password']);
 
     if (empty($username)) {
-        header("Location: admin/index.php?error=User Name is required");
+        header("Location: index.php?error=User Name is required");
         exit();
     }else if(empty($password)){
-        header("Location: admin/index.php?error=Password is required");
+        header("Location: index.php?error=Password is required");
         exit();
     }else{
 
@@ -29,14 +29,14 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
             if ($row['username'] === $username && $row['password'] === md5($password)) {
                 $_SESSION['username'] = $row['username'];
                 $_SESSION['id'] = $row['id'];
-                header("Location: admin/dashboard.php");
+                header("Location: dashboard.php");
                 exit();
             }else{
-                header("Location: admin/index.php?error=Incorect User name or password");
+                header("Location: index.php?error=Incorect User name or password");
                 exit();
             }
         }else{
-            header("Location: admin/index.php?error=Incorect User name or password");
+            header("Location: index.php?error=Incorect User name or password");
             exit();
         }
 

@@ -13,7 +13,7 @@
         
 		if (mysqli_query($conn, $sql)) {
 			$_SESSION['message'] = "Successfully Registration!"; 
-            header('location:admin/index.php');
+            header('location:index.php');
 		} 
 		else {
 			$_SESSION['message'] = "Error Registration!";
