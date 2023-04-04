@@ -6,10 +6,11 @@
 		$address = $_POST['address'];
         $email = $_POST['email'];
         $city = $_POST['city'];
+        $user_type = "A";
         $password = md5($_POST['password']);
 
-        $sql = "INSERT INTO admin_user (username, address, email, city, password) 
-		VALUES ('{$username}','{$address}','{$email}','{$city}','{$password}')";
+        $sql = "INSERT INTO user (username, address, email, city, password,user_type) 
+		VALUES ('{$username}','{$address}','{$email}','{$city}','{$password}','{$user_type}')";
         
 		if (mysqli_query($conn, $sql)) {
 			$_SESSION['message'] = "Successfully Registration!"; 

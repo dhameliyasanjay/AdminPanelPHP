@@ -78,6 +78,10 @@ if (isset($_GET['id'])) {
                     </ul>
                 </div>
                 <!-- END PAGE BAR -->
+                <h1 class="page-title"> Product Category
+                    <small>Product Category Samples</small>
+                </h1>
+
                 <div class="tab-pane" id="tab_2">
                     <div class="portlet box green">
                         <div class="portlet-title">

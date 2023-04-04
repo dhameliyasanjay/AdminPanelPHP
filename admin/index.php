@@ -20,7 +20,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
         exit();
     }else{
 
-        $sql = "SELECT * FROM admin_user WHERE username='$username' AND password='".md5($password)."'";
+        $sql = "SELECT * FROM user WHERE username='$username' AND password='".md5($password)."'";
         $result = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($result) === 1) {

@@ -45,18 +45,25 @@
                         <span class="title">Dashboard</span>
                         <span class="arrow"></span>
                     </a>
+                </li>
+                <li class="nav-item start ">
+                    <a href="dashboard.php" class="nav-link nav-toggle">
+                        <i class="icon-home"></i>
+                        <span class="title">Product</span>
+                        <span class="arrow"></span>
+                    </a>
                     <ul class="sub-menu">
                         <li class="nav-item start ">
                             <a href="product_category_index.php" class="nav-link ">
-<!--                                <i class="icon-bar-chart"></i>-->
+                                <!--                                <i class="icon-bar-chart"></i>-->
                                 <span class="title">Product Category</span>
                             </a>
                         </li>
                         <li class="nav-item start ">
                             <a href="product_unit_index.php" class="nav-link ">
-<!--                                <i class="icon-bulb"></i>-->
+                                <!--                                <i class="icon-bulb"></i>-->
                                 <span class="title">Product Unit</span>
-<!--                                <span class="badge badge-success">1</span>-->
+                                <!--                                <span class="badge badge-success">1</span>-->
                             </a>
                         </li>
                         <li class="nav-item start ">
@@ -73,13 +80,13 @@
                                 <!--                                <span class="badge badge-success">1</span>-->
                             </a>
                         </li>
-<!--                        <li class="nav-item start ">-->
-<!--                            <a href="dashboard_3.html" class="nav-link ">-->
-<!--                                <i class="icon-graph"></i>-->
-<!--                                <span class="title">Dashboard 3</span>-->
-<!--                                <span class="badge badge-danger">5</span>-->
-<!--                            </a>-->
-<!--                        </li>-->
+                        <!--                        <li class="nav-item start ">-->
+                        <!--                            <a href="dashboard_3.html" class="nav-link ">-->
+                        <!--                                <i class="icon-graph"></i>-->
+                        <!--                                <span class="title">Dashboard 3</span>-->
+                        <!--                                <span class="badge badge-danger">5</span>-->
+                        <!--                            </a>-->
+                        <!--                        </li>-->
                     </ul>
                 </li>
             </ul>
@@ -89,5 +96,3 @@
         <!-- END SIDEBAR -->
     </div>
     <!-- END SIDEBAR -->
-
-    <!-- END QUICK SIDEBAR -->

@@ -1,8 +1,18 @@
-<?php  
-    session_start();  
-    if (!isset($_SESSION['id'])) {
-        header("Location: index.php");
-    }
+<?php
+include 'config.php';
+include 'common.php';
+
+if (!isset($_SESSION['id'])) {
+    header("Location: index.php");
+}
+
+$sql = "SELECT * FROM user";
+$result = mysqli_query($conn, $sql);
+$row = mysqli_fetch_assoc($result);
+if (!isset($row) == "A") {
+    header("Location: index.php");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +37,7 @@
                     <!-- BEGIN CONTENT BODY -->
                     <div class="page-content">
                         <!-- BEGIN PAGE HEADER-->
-                        
+
                         <!-- BEGIN PAGE BAR -->
                         <div class="page-bar">
                             <ul class="page-breadcrumb">
@@ -6983,13 +6993,13 @@
                     <!-- END CONTENT BODY -->
                 </div>
                 <!-- END CONTENT -->
-                
+
             </div>
             <!-- END CONTAINER -->
             <?php include 'includes/body_footer.php'; ?>
         </div>
         <?php include 'includes/footer.php'; ?>
-        
+
     </body>
 
 </html>
