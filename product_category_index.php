@@ -35,15 +35,12 @@ if (!isset($_SESSION['id'])) {
                 <div class="page-bar">
                     <ul class="page-breadcrumb">
                         <li>
-                            <a href="index.html">Home</a>
+                            <a href="dashboard.php">Home</a>
                             <i class="fa fa-circle"></i>
                         </li>
                         <li>
                             <a href="#">Tables</a>
                             <i class="fa fa-circle"></i>
-                        </li>
-                        <li>
-                            <span>Datatables</span>
                         </li>
                     </ul>
                 </div>
@@ -71,38 +68,38 @@ if (!isset($_SESSION['id'])) {
                                         <div class="portlet-body">
                                             <div class="table-toolbar">
                                                 <div class="row">
-                                                    <div class="col-md-6">
-                                                        <div class="btn-group">
+                                                    <div class="col-md-12">
+                                                        <div class="btn-group pull-right">
                                                             <a href="product_category.php " id="sample_editable_1_new"
                                                                class="btn sbold green"> Add Product Category
                                                                 <i class="fa fa-plus"></i>
                                                             </a>
                                                         </div>
                                                     </div>
-                                                    <div class="col-md-6">
-                                                        <div class="btn-group pull-right">
-                                                            <button class="btn green  btn-outline dropdown-toggle"
-                                                                    data-toggle="dropdown">Tools
-                                                                <i class="fa fa-angle-down"></i>
-                                                            </button>
-                                                            <ul class="dropdown-menu pull-right">
-                                                                <li>
-                                                                    <a href="javascript:;">
-                                                                        <i class="fa fa-print"></i> Print </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="javascript:;">
-                                                                        <i class="fa fa-file-pdf-o"></i> Save as PDF
-                                                                    </a>
-                                                                </li>
-                                                                <li>
-                                                                    <a href="javascript:;">
-                                                                        <i class="fa fa-file-excel-o"></i> Export to
-                                                                        Excel </a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
+<!--                                                    <div class="col-md-6">-->
+<!--                                                        <div class="btn-group pull-right">-->
+<!--                                                            <button class="btn green  btn-outline dropdown-toggle"-->
+<!--                                                                    data-toggle="dropdown">Tools-->
+<!--                                                                <i class="fa fa-angle-down"></i>-->
+<!--                                                            </button>-->
+<!--                                                            <ul class="dropdown-menu pull-right">-->
+<!--                                                                <li>-->
+<!--                                                                    <a href="javascript:;">-->
+<!--                                                                        <i class="fa fa-print"></i> Print </a>-->
+<!--                                                                </li>-->
+<!--                                                                <li>-->
+<!--                                                                    <a href="javascript:;">-->
+<!--                                                                        <i class="fa fa-file-pdf-o"></i> Save as PDF-->
+<!--                                                                    </a>-->
+<!--                                                                </li>-->
+<!--                                                                <li>-->
+<!--                                                                    <a href="javascript:;">-->
+<!--                                                                        <i class="fa fa-file-excel-o"></i> Export to-->
+<!--                                                                        Excel </a>-->
+<!--                                                                </li>-->
+<!--                                                            </ul>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
                                                 </div>
                                             </div>
                                             <table class="table table-striped table-bordered table-hover table-checkable order-column"
@@ -122,18 +119,18 @@ if (!isset($_SESSION['id'])) {
 
                                                 if (mysqli_num_rows($result) > 0) {
                                                     while ($row = mysqli_fetch_array($result)) {
-
                                                         ?>
                                                         <tr class="odd gradeX">
                                                             <td> <?php echo $row['id'] ?> </td>
                                                             <td>
-                                                                <a href="mailto:shuxer@gmail.com"> <?php echo $row['name'] ?> </a>
+                                                                 <?php echo $row['name'] ?>
                                                             </td>
                                                             <td>
-                                                                <?php if (($row['is_active']) == 'Y') {
-                                                                    echo '<button class="button-33" role="button">Active</button>';
+                                                                <?php if (($row['is_active']) == 'N') {
+                                                                    echo '<button class="button-11" role="button">Dective</button>';
+
                                                                 } else {
-                                                                    echo '<button class="button-34" role="button">Dective</button>';
+                                                                    echo '<button class="button-10" role="button">Active</button>';
                                                                 } ?>
                                                             </td>
                                                             <td>
@@ -143,8 +140,8 @@ if (!isset($_SESSION['id'])) {
                                                                    class="margin-right-10" title="Update Record"><span
                                                                             class="fa fa-pencil"></span></a>
                                                                 <a href="product_category_deleted.php?id=<?php echo $row['id']; ?>"
-                                                                   title="Delete Record" "><span
-                                                                        class="fa fa-trash"></span></a>
+                                                                   title="Delete Record" ">
+                                                                <span class="fa fa-trash"></span></a>
                                                             </td>
                                                         </tr>
                                                         <?php

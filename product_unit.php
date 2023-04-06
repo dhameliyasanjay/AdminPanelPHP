@@ -61,6 +61,11 @@ if (isset($_POST['submit'])) {
                         </li>
                     </ul>
                 </div>
+
+                <h1 class="page-title"> Product Unit
+                    <small>Product Unit Samples</small>
+                </h1>
+
                 <!-- END PAGE BAR -->
                 <div class="tab-pane" id="tab_2">
                     <div class="portlet box green">
@@ -68,8 +73,8 @@ if (isset($_POST['submit'])) {
                             <div class="caption">
                                 <i class="fa fa-gift"></i>Product Unit
                             </div>
-
                         </div>
+
                         <div class="portlet-body form">
                             <!-- BEGIN FORM-->
                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" id="unit" method="post" class="form-horizontal">

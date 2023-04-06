@@ -30,5 +30,6 @@
     <link rel="shortcut icon" href="favicon.ico" />
 
     <link href="assets/layouts/layout/css/custom.min.css" rel="stylesheet" type="text/css" />
+    <link href="assets/customcss/style.css" rel="stylesheet" type="text/css"/>
 
 </head>

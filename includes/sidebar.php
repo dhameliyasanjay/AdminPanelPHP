@@ -1,3 +1,9 @@
+
+
+<?php
+$curPageName = substr($_SERVER["SCRIPT_NAME"],strrpos($_SERVER["SCRIPT_NAME"],"/")+1);
+?>
+
 <div class="page-sidebar-wrapper">
         <!-- BEGIN SIDEBAR -->
         <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
@@ -24,8 +30,8 @@
                     <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
                     <!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
                     <!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
-                    <form class="sidebar-search  " action="page_general_search_3.html" method="POST">
-                        <a href="javascript:;" class="remove">
+                    <form class="sidebar-search" action="page_general_search_3.html" method="POST">
+                        <a href="javascript:y" class="remove">
                             <i class="icon-close"></i>
                         </a>
                         <div class="input-group">
@@ -39,41 +45,40 @@
                     </form>
                     <!-- END RESPONSIVE QUICK SEARCH FORM -->
                 </li>
-                <li class="nav-item start ">
+                <li class="nav-item start <?= $curPageName == 'dashboard.php' ? 'active' : '' ?>">
                     <a href="dashboard.php" class="nav-link nav-toggle">
                         <i class="icon-home"></i>
                         <span class="title">Dashboard</span>
-                        <span class="arrow"></span>
                     </a>
                 </li>
-                <li class="nav-item start ">
-                    <a href="dashboard.php" class="nav-link nav-toggle">
+                <li class="nav-item start <?= $curPageName == 'product_category_index.php' || $curPageName ==  'product_unit_index.php' || $curPageName == 'product_brand_index.php' || $curPageName == 'product_sub_category_index.php' ? 'active' : '' ?>">
+                    <a href="javascript:;" class="nav-link nav-toggle">
                         <i class="icon-home"></i>
                         <span class="title">Product</span>
                         <span class="arrow"></span>
                     </a>
                     <ul class="sub-menu">
-                        <li class="nav-item start ">
+                        <li class="nav-item start <?= $curPageName == 'product_category_index.php'  ? 'active' : '' ?>">
                             <a href="product_category_index.php" class="nav-link ">
                                 <!--                                <i class="icon-bar-chart"></i>-->
                                 <span class="title">Product Category</span>
                             </a>
                         </li>
-                        <li class="nav-item start ">
+                        <li class="nav-item start <?= $curPageName == 'product_unit_index.php'  ? 'active' : '' ?>">
                             <a href="product_unit_index.php" class="nav-link ">
                                 <!--                                <i class="icon-bulb"></i>-->
                                 <span class="title">Product Unit</span>
                                 <!--                                <span class="badge badge-success">1</span>-->
                             </a>
                         </li>
-                        <li class="nav-item start ">
+                        <li class="nav-item start <?= $curPageName == 'product_brand_index.php'  ? 'active' : '' ?> ">
                             <a href="product_brand_index.php" class="nav-link ">
                                 <!--                                <i class="icon-bulb"></i>-->
                                 <span class="title">Product Brand</span>
                                 <!--                                <span class="badge badge-success">1</span>-->
                             </a>
                         </li>
-                        <li class="nav-item start ">
+                        <li class="nav-item start <?= $curPageName == 'product_sub_category_index.php'  ? 'active' : '' ?>">
                             <a href="product_sub_category_index.php" class="nav-link ">
                                 <!--                                <i class="icon-bulb"></i>-->
                                 <span class="title">Product Sub Categoty</span>
