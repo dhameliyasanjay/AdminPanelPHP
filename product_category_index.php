@@ -121,7 +121,7 @@ if (!isset($_SESSION['id'])) {
                                                     while ($row = mysqli_fetch_array($result)) {
                                                         ?>
                                                         <tr class="odd gradeX">
-                                                            <td> <?php (++$i) ?> </td>
+                                                            <td> <?php echo $row['id'] ?> </td>
                                                             <td>
                                                                  <?php echo $row['name'] ?>
                                                             </td>
