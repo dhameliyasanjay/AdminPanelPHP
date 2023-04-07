@@ -156,13 +156,9 @@ if (!isset($_SESSION['id'])) {
                                                         <?php
                                                     }
                                                 }
-                                                //                                            ?>
-                                                <!--                                            <div class="text-center margin-top-40">-->
-                                                <!--                                                <span class="alert alert-info"> Record Not Found </span>-->
-                                                <!--                                            </div>-->
-                                                <!--                                            --><?php
-                                                //                                            }
-                                                ?>
+                                                else{ ?>
+                                                    <tr><td colspan="6">No Product Sub Category Found......</td></tr>
+                                                <?php } ?>
                                                 </tbody>
                                             </table>
                                         </div>

@@ -121,7 +121,7 @@ if (!isset($_SESSION['id'])) {
                                                     while ($row = mysqli_fetch_array($result)) {
                                                         ?>
                                                         <tr class="odd gradeX">
-                                                            <td> <?php echo $row['id'] ?> </td>
+                                                            <td> <?php (++$i) ?> </td>
                                                             <td>
                                                                  <?php echo $row['name'] ?>
                                                             </td>
@@ -147,7 +147,9 @@ if (!isset($_SESSION['id'])) {
                                                         <?php
                                                     }
                                                 }
-                                                ?>
+                                                else{ ?>
+                                                    <tr><td colspan="5">No Product Category Found......</td></tr>
+                                                <?php } ?>
                                                 </tbody>
                                             </table>
                                         </div>
